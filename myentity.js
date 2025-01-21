@@ -7,10 +7,10 @@ class myentity {
     }
 
     update() {
-        this.animState += .1;
+        this.animState += gameEngine.clockTick * 3;
         this.animState %= 5;
     }
     draw(ctx){
-        ctx.drawImage(ASSET_MANAGER.getAsset("./spritesheet.png"), 205 * Math.floor(this.animState),0, 200,330, 0,0, 200,330);
+        ctx.drawImage(ASSET_MANAGER.getAsset("./spritesheet.png"), 205 * Math.floor(this.animState),0, 200,330, this.x,this.y, 200,330);
     }
 }
